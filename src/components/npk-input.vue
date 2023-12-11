@@ -9,6 +9,7 @@ const properties = defineProps({
   type: { type: String, required: false },
   cleaner: { type: Boolean, required: false, default: false },
   error: { type: String, required: false },
+  disabled: { type: Boolean, required: false },
 });
 
 const emits = defineEmits(["search", "update:model-value"]);
@@ -16,7 +17,7 @@ console.log("npk-input", properties);
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="wrapper" :class="{ '-disabled': disabled }">
     <span class="label" v-show="label">{{ label }}</span>
     <div
       class="input-wrapper"
@@ -32,7 +33,12 @@ console.log("npk-input", properties);
         class="search"
         @click="$emit('search')"
       />
-      <input type="text" :value="modelValue" :placeholder="placeholder" />
+      <input
+        type="text"
+        :value="modelValue"
+        :disabled="disabled"
+        :placeholder="placeholder"
+      />
       <npk-icon
         v-if="cleaner"
         name="bi bi-x hover"
@@ -54,6 +60,14 @@ console.log("npk-input", properties);
   width: 100%;
   flex-direction: column;
   color: white;
+  &.-disabled span {
+    color: $color-white-transparent;
+  }
+  &.-disabled input,
+  input:hover {
+    border: 1px solid $color-white-transparent;
+    color: $color-white-transparent;
+  }
 }
 
 input {

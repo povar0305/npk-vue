@@ -18,7 +18,7 @@ export const Default: StoryFn<typeof Component> = (args) => ({
     return { args, modelValue: "text" };
   },
 
-  template: '<Component v-bind="args" />',
+  template: '<component v-bind="args"  :model-value="args.modelValue"/>',
 });
 
 export const Search = Default.bind({});
@@ -32,6 +32,10 @@ Cleaner.args = { cleaner: true };
 export const Error = Default.bind({});
 Error.storyName = "С ошибкой";
 Error.args = { error: "текст ошибки" };
+
+export const Disabled = Default.bind({});
+Disabled.storyName = "disabled";
+Disabled.args = { disabled: true };
 
 export const Label = Default.bind({});
 Label.storyName = "С заголовком";
