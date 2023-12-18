@@ -123,4 +123,8 @@ input:focus {
   margin-top: 0.3rem;
   color: $color-error;
 }
+
+.-error input {
+  border-color: $color-error;
+}
 </style>

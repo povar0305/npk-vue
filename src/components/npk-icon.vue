@@ -14,6 +14,7 @@ console.log("npm-icon", properties);
 .hover {
   opacity: 0.8;
   cursor: pointer;
+  transition: 2ms ease-in-out;
 }
 
 .hover:hover {

@@ -12,9 +12,24 @@ export const Default: StoryFn<typeof Component> = (args) => ({
     return { args, modelValue: "text" };
   },
 
-  template: '<component v-bind="args" ></component>',
+  template: '<component v-bind="args" >Текст кнопки</component>',
 });
+export const Disabled = Default.bind({});
+Disabled.storyName = "Disabled";
+Disabled.args = { disabled: true };
 
-export const Search = Default.bind({});
-Search.storyName = "Поиск";
-Search.args = { type: "search" };
+export const Primary = Default.bind({});
+Primary.storyName = "Primary";
+Primary.args = { primary: true };
+
+export const Error = Default.bind({});
+Error.storyName = "Error";
+Error.args = { error: true };
+
+export const Success = Default.bind({});
+Success.storyName = "Success";
+Success.args = { success: true };
+
+export const Warning = Default.bind({});
+Warning.storyName = "Warning";
+Warning.args = { warning: true };
