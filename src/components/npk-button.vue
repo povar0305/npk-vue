@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import NpkIcon from "@/components/npk-icon.vue";
+
 const properties = defineProps({
   disabled: { type: Boolean },
   error: { type: Boolean },
   success: { type: Boolean },
   warning: { type: Boolean },
   primary: { type: Boolean },
+  iconPrev: { type: String },
+  iconNext: { type: String },
 });
 </script>
 
@@ -19,7 +23,10 @@ const properties = defineProps({
       '-primary': primary,
     }"
   >
+    <npk-icon v-if="iconPrev" :name="iconPrev" />
+
     <slot>text</slot>
+    <npk-icon v-if="iconNext" :name="iconNext" />
   </button>
 </template>
 

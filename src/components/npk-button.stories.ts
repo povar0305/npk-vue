@@ -18,6 +18,18 @@ export const Disabled = Default.bind({});
 Disabled.storyName = "Disabled";
 Disabled.args = { disabled: true };
 
+export const IconPrev = Default.bind({});
+IconPrev.storyName = "С иконкой вначале";
+IconPrev.args = { iconPrev: "bi bi-x" };
+
+export const IconNext = Default.bind({});
+IconNext.storyName = "С иконкой в конце";
+IconNext.args = { iconNext: "bi bi-x" };
+
+export const Icon = Default.bind({});
+Icon.storyName = "Две иконки";
+Icon.args = { iconNext: "bi bi-x", iconPrev: "bi bi-x" };
+
 export const Primary = Default.bind({});
 Primary.storyName = "Primary";
 Primary.args = { primary: true };
